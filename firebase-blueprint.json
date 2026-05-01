@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "RSVPRequest": {
+      "title": "RSVP Request",
+      "description": "An elite guest requesting access to the launch event.",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "fullName": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"] },
+        "requestedAt": { "type": "string", "format": "date-time" },
+        "notes": { "type": "string" }
+      },
+      "required": ["email", "requestedAt"]
+    },
+    "ChatMessage": {
+      "title": "Chat Message",
+      "description": "A message exchanged between a user and the Cultural Concierge.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "role": { "type": "string", "enum": ["user", "assistant"] },
+        "content": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["role", "content", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/rsvps/{rsvpId}": {
+      "schema": "RSVPRequest",
+      "description": "Collection of RSVP requests from potential guests."
+    },
+    "/chats/{chatId}/messages/{messageId}": {
+      "schema": "ChatMessage",
+      "description": "Subcollection of messages for a specific chat session."
+    }
+  }
+}

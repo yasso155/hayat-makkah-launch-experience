@@ -1,0 +1,66 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 0. Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 0.1 Helpers
+    function isSignedIn() { return request.auth != null; }
+    function isValidId(id) { return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); }
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+    
+    // RBAC: Admin check (Lookup based on emails)
+    function isAdmin() { 
+      return isSignedIn() && (
+        request.auth.token.email == 'YSeddig15@gmail.com' && request.auth.token.email_verified == true
+      ); 
+    }
+
+    // --- RSVP Rules ---
+    match /rsvps/{rsvpId} {
+      function isValidRSVP(data) {
+        return data.keys().hasAll(['email', 'requestedAt'])
+          && data.email is string && data.email.size() <= 100
+          && data.requestedAt == request.time
+          && (!('fullName' in data) || (data.fullName is string && data.fullName.size() <= 100))
+          && (!('notes' in data) || (data.notes is string && data.notes.size() <= 500))
+          && (!('status' in data) || data.status in ['pending', 'approved', 'rejected']);
+      }
+
+      allow create: if isValidRSVP(incoming()) 
+        && (!('status' in incoming()) || incoming().status == 'pending')
+        && isValidId(rsvpId);
+        
+      allow get: if isAdmin() || (isSignedIn() && existing().email == request.auth.token.email);
+      allow list: if isAdmin() || (isSignedIn() && resource.data.email == request.auth.token.email);
+      
+      allow update: if isAdmin() && isValidRSVP(incoming());
+      allow delete: if isAdmin();
+    }
+
+    // --- Chat Rules ---
+    match /chats/{chatId} {
+      allow get: if isSignedIn() && (chatId == request.auth.uid || isAdmin());
+      
+      match /messages/{messageId} {
+        function isValidMessage(data) {
+          return data.keys().hasAll(['role', 'content', 'timestamp'])
+            && data.role in ['user', 'assistant']
+            && data.content is string && data.content.size() <= 2000
+            && data.timestamp == request.time;
+        }
+
+        allow create: if isSignedIn() 
+          && (chatId == request.auth.uid || isAdmin())
+          && isValidMessage(incoming())
+          && (incoming().role == 'user' || isAdmin())
+          && isValidId(messageId);
+          
+        allow list, get: if isSignedIn() && (chatId == request.auth.uid || isAdmin());
+      }
+    }
+  }
+}
