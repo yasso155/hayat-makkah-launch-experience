@@ -19,7 +19,7 @@ export default function AlchemySection({ lang = 'en' }: AlchemySectionProps) {
             {isAr ? <>كيمياء <br /><span className="italic text-gold-elite">التجربة</span></> : <>THE ALCHEMY OF <br /><span className="italic text-gold-elite">EXPERIENCE</span></>}
           </h2>
           <p className="text-bronze-accent uppercase tracking-[4px] text-xs">
-            {isAr ? 'لماذا يقود هذا النظام إلى عوائد استثمارية لا مثيل لها.' : 'Why this ecosystem drives unrivaled ROI.'}
+            {isAr ? 'لماذا يقود هذا النظام المتكامل للتجربة إلى عوائد استثمارية لا مثيل لها.' : 'Why this integrated experience system drives unrivaled ROI.'}
           </p>
         </div>
 

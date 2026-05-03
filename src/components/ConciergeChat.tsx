@@ -164,27 +164,27 @@ export default function ConciergeChat({ lang = 'en' }: ConciergeChatProps) {
           <div className={isAr ? 'text-right' : ''}>
             <div className={`inline-flex items-center gap-3 text-gold-elite mb-6 ${isAr ? 'flex-row-reverse' : ''}`}>
               <Sparkle size={18} />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold">{isAr ? 'تفاعل نخبة على مدار الساعة' : '24/7 Elite Engagement'}</span>
+              <span className="text-xs uppercase tracking-[0.3em] font-bold">{isAr ? 'ذكاء الضيوف في الوقت الفعلي' : 'Real-Time Guest Intelligence'}</span>
             </div>
             <h2 className={`text-5xl md:text-6xl mb-8 ${isAr ? 'font-sans' : ''}`}>{isAr ? <>الكونسيرج <br /><span className="italic text-emerald-deep">الثقافي</span></> : <>The Cultural <br /><span className="italic text-emerald-deep">Concierge</span></>}</h2>
             <p className="text-ivory-warm/60 font-light text-xl leading-relaxed mb-10">
               {isAr 
-                ? 'تم تدريب كونسيرج الذكاء الاصطناعي الخاص بنا على التفاصيل الدقيقة للضيافة السعودية التركية. من أسئلة البروتوكول إلى الملاحة المكانية، مساعد النخبة متاح دائماً.' 
-                : 'Our bespoke AI concierge is trained on the fine details of Saudi-Turkish hospitality. From protocol questions to spatial navigation, your elite assistant is always present.'}
+                ? 'مدعوم بفريق عمليات مباشر. يتم تتبع كل استفسار، وتتم مراقبة كل استجابة لضمان دقة التنفيذ.' 
+                : 'Backed by a live operations team. Every inquiry is tracked, every response is monitored, ensuring precision execution.'}
             </p>
             
             <div className={`flex items-center gap-8 border-t border-white/10 pt-10 ${isAr ? 'flex-row-reverse' : ''}`}>
               <div className="text-center">
                 <div className="text-4xl font-display text-gold-elite">50</div>
-                <div className="text-[10px] uppercase tracking-widest opacity-40">{isAr ? 'بروتوكولات كبار الشخصيات' : 'VIP Protocols'}</div>
+                <div className="text-[10px] uppercase tracking-widest opacity-40">{isAr ? 'بروتوكول مُدار' : 'Managed Protocols'}</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-display text-gold-elite">24</div>
-                <div className="text-[10px] uppercase tracking-widest opacity-40">{isAr ? 'أنماط الخدمة' : 'Service Modes'}</div>
+                <div className="text-[10px] uppercase tracking-widest opacity-40">{isAr ? 'أنماط تحكم نشطة' : 'Active Control Modes'}</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-display text-gold-elite">∞</div>
-                <div className="text-[10px] uppercase tracking-widest opacity-40">{isAr ? 'حسن الضيافة' : 'Hospitality'}</div>
+                <div className="text-4xl font-display text-gold-elite">0</div>
+                <div className="text-[10px] uppercase tracking-widest opacity-40">{isAr ? 'أعطال صفرية' : 'Zero Failures'}</div>
               </div>
             </div>
           </div>

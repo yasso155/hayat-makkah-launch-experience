@@ -31,7 +31,7 @@ export default function Hero({ lang = 'en' }: HeroProps) {
             className={`flex items-center gap-3 text-gold-elite text-[11px] uppercase tracking-[3px] mb-12 opacity-80 ${isAr ? 'flex-row-reverse justify-start' : ''}`}
           >
             <span className="w-12 h-px bg-gold-elite/40" />
-            {isAr ? 'شراكة استراتيجية ثنائية' : 'Bilateral Strategic Partnership'}
+            {isAr ? 'نظام تجربة متكامل' : 'An Integrated Experience System'}
           </motion.div>
 
           <motion.h1 
@@ -49,7 +49,16 @@ export default function Hero({ lang = 'en' }: HeroProps) {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {isAr ? 'مفهوم تجربة حياة مكة' : 'Hayat Makkah Experience Concept'}
+            <span className={isAr ? 'font-sans block' : 'block'}>
+              {isAr ? 'رحلة' : 'Unified'}
+            </span>
+            <span className={`italic text-sand-warm ${isAr ? 'font-serif' : ''}`}>
+              {isAr ? 'مكانية موحدة' : 'Spatial'}
+            </span>
+            <br />
+            <span className={isAr ? 'font-sans' : ''}>
+              {isAr ? '' : 'Journey'}
+            </span>
           </motion.p>
 
           <motion.div
@@ -59,9 +68,18 @@ export default function Hero({ lang = 'en' }: HeroProps) {
             className={`flex items-center gap-10 border-t border-gold-elite/10 pt-16 ${isAr ? 'flex-row-reverse' : ''}`}
           >
             <div className={`max-w-[300px] ${isAr ? 'text-right' : ''}`}>
-               <p className="text-sm font-light text-sand-warm/40 leading-relaxed">
-                {isAr ? 'ترسيخ مكانة إملاك كونوت كجسر بين الحرفية التركية التاريخية ومستقبل العقارات الفاخرة السعودية.' : 'Positioning Emlak Konut as the bridge between historic Turkish craftsmanship and the future of Saudi luxury real estate.'}
+               <p className="text-sm font-light text-sand-warm/40 leading-relaxed mb-6">
+                {isAr ? 'ربط الحرفية التركية التاريخية ومستقبل العقارات الفاخرة السعودية من خلال رحلة بصرية ومكانية موحدة.' : 'Bridging historic Turkish craftsmanship and the future of Saudi luxury real estate through a unified visual and spatial journey.'}
               </p>
+              
+              <div className="bg-charcoal-dark/50 border border-gold-elite/20 p-4 rounded-xl flex flex-col gap-2">
+                <div className="text-[9px] uppercase tracking-[2px] text-gold-elite">Experience Note</div>
+                <div className="text-xs text-sand-warm/60 font-light leading-relaxed">
+                  {isAr 
+                    ? 'يدخل الضيوف إلى بيئة يتم التحكم فيها بدقة، ليجدوا أنفسهم محاطين بالفخامة الحديثة والصدى الثقافي على الفور.' 
+                    : 'Guests enter a meticulously controlled environment, immediately enveloped in modern luxury and cultural resonance.'}
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -91,26 +109,50 @@ export default function Hero({ lang = 'en' }: HeroProps) {
           <div className="border-t border-gold-elite/20 pt-8 mt-12">
             <span className="text-[11px] uppercase tracking-[2.5px] text-gold-elite mb-6 block">{isAr ? 'مسار التجربة' : 'Experience Flow'}</span>
             <ul className={`space-y-4 text-xs tracking-widest text-sand-warm/60 ${isAr ? 'font-sans' : ''}`}>
-              <li className={`flex items-center gap-3 ${isAr ? 'flex-row-reverse' : ''}`}>
-                <span className="w-1 h-1 bg-gold-elite rounded-full" />
-                {isAr ? 'كشف التحليق الحركي' : 'Kinetic Levitation Reveal'}
+              <li className={`flex flex-col gap-1 ${isAr ? 'items-end' : 'items-start'}`}>
+                <div className={`flex items-center gap-3 ${isAr ? 'flex-row-reverse' : ''}`}>
+                  <span className="w-1 h-1 bg-gold-elite rounded-full" />
+                  {isAr ? 'كشف التحليق الحركي' : 'Kinetic Levitation Reveal'}
+                </div>
+                <span className="text-[9px] uppercase opacity-40 ml-4 mr-4">{isAr ? 'تنفيذ تقني' : 'Technically Executed'}</span>
               </li>
-              <li className={`flex items-center gap-3 ${isAr ? 'flex-row-reverse' : ''}`}>
-                <span className="w-1 h-1 bg-gold-elite rounded-full" />
-                {isAr ? 'عرض الإسقاط ثلاثي الأبعاد' : '3D Projection Mapping'}
+              <li className={`flex flex-col gap-1 ${isAr ? 'items-end' : 'items-start'}`}>
+                <div className={`flex items-center gap-3 ${isAr ? 'flex-row-reverse' : ''}`}>
+                  <span className="w-1 h-1 bg-gold-elite rounded-full" />
+                  {isAr ? 'عرض الإسقاط ثلاثي الأبعاد' : '3D Projection Mapping'}
+                </div>
+                <span className="text-[9px] uppercase opacity-40 ml-4 mr-4">{isAr ? 'تحكم عملياتي' : 'Operationally Controlled'}</span>
               </li>
-              <li className={`flex items-center gap-3 ${isAr ? 'flex-row-reverse' : ''}`}>
-                <span className="w-1 h-1 bg-gold-elite rounded-full" />
-                {isAr ? 'نماذج هولوغرافية' : 'Holographic Models'}
+              <li className={`flex flex-col gap-1 ${isAr ? 'items-end' : 'items-start'}`}>
+                <div className={`flex items-center gap-3 ${isAr ? 'flex-row-reverse' : ''}`}>
+                  <span className="w-1 h-1 bg-gold-elite rounded-full" />
+                  {isAr ? 'نماذج هولوغرافية' : 'Holographic Models'}
+                </div>
+                <span className="text-[9px] uppercase opacity-40 ml-4 mr-4">{isAr ? 'تزامن مباشر' : 'Live Sync'}</span>
               </li>
-              <li className={`flex items-center gap-3 ${isAr ? 'flex-row-reverse' : ''}`}>
-                <span className="w-1 h-1 bg-emerald-deep/50 rounded-full" />
-                {isAr ? 'خدمة الكونسيرج الثقافي' : 'Cultural Concierge Service'}
+              <li className={`flex flex-col gap-1 ${isAr ? 'items-end' : 'items-start'}`}>
+                <div className={`flex items-center gap-3 ${isAr ? 'flex-row-reverse' : ''}`}>
+                  <span className="w-1 h-1 bg-emerald-deep/50 rounded-full" />
+                  {isAr ? 'خدمة الكونسيرج الثقافي' : 'Cultural Concierge Service'}
+                </div>
+                <span className="text-[9px] uppercase opacity-40 ml-4 mr-4 text-emerald-deep">{isAr ? 'مُدار على مدار الساعة' : '24/7 Managed'}</span>
               </li>
             </ul>
           </div>
 
-          <button className="w-full bg-gold-elite text-charcoal py-4 rounded-xl font-bold text-[10px] uppercase tracking-[3px] mt-10 hover:bg-white transition-all">
+          <div className={`flex items-center gap-4 border-t border-gold-elite/20 pt-6 mt-8 ${isAr ? 'flex-row-reverse text-right' : ''}`}>
+             <div className="flex-1">
+               <div className="text-[9px] uppercase tracking-[2px] text-gold-elite mb-1">Visual Identity</div>
+               <div className="text-xs">Unified System</div>
+             </div>
+             <div className="h-6 w-px bg-gold-elite/20" />
+             <div className="flex-1 text-right">
+               <div className="text-[9px] uppercase tracking-[2px] text-gold-elite mb-1">Physical Environment</div>
+               <div className="text-xs text-emerald-deep">Designed</div>
+             </div>
+          </div>
+
+          <button className="w-full bg-gold-elite text-charcoal py-4 rounded-xl font-bold text-[10px] uppercase tracking-[3px] mt-8 hover:bg-white transition-all">
             {isAr ? 'بوابة كبار الشخصيات الآمنة' : 'Secure VIP Portal'}
           </button>
         </motion.div>

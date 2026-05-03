@@ -8,10 +8,26 @@ export default function TimelineSection() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-elite/5 blur-[150px] rounded-full" />
       
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-24">
-          <h2 className="text-6xl md:text-7xl mb-8">Program <span className="italic text-gold-elite">Trajectory</span></h2>
-          <div className="w-24 h-1 bg-gold-elite mx-auto" />
-        </div>
+          <div className="flex items-center gap-4 mb-6">
+            <span className="w-8 h-px bg-gold-elite/40" />
+            <span className="text-[11px] uppercase tracking-[4px] text-gold-elite font-bold">
+              Cultural Experience
+            </span>
+          </div>
+
+          <h2 className="text-5xl md:text-7xl mb-6">
+            CURATED CULTURAL <span className="text-gold-elite italic">EXPRESSION</span>
+          </h2>
+          <p className="text-sand-warm/60 font-light text-lg mb-8 max-w-2xl">
+            Emotional, controlled, and deeply symbolic.
+          </p>
+
+          <div className="bg-charcoal-dark/50 border border-gold-elite/20 p-4 rounded-xl flex flex-col gap-2 max-w-xl mb-24">
+            <div className="text-[9px] uppercase tracking-[2px] text-gold-elite">Experience Note</div>
+            <div className="text-xs text-sand-warm/60 font-light leading-relaxed">
+              Guests witness a powerful, controlled cultural expression that deepens the emotional connection within a highly curated architectural setting.
+            </div>
+          </div>
 
         <div className="space-y-12 max-w-4xl mx-auto">
           {TIMELINE.map((item, index) => (
@@ -39,7 +55,7 @@ export default function TimelineSection() {
                   <span className="text-gold-elite italic font-display text-xl">{item.subtitle}</span>
                 </div>
 
-                <p className="text-ivory-warm/60 font-light text-lg leading-relaxed mb-8 max-w-2xl">
+                <p className="text-ivory-warm/60 font-light text-lg leading-relaxed mb-6 max-w-2xl">
                   {item.description}
                 </p>
 

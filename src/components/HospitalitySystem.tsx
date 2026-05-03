@@ -21,16 +21,25 @@ export default function HospitalitySystem({ onOpenPresentation, lang = 'en' }: H
         <div className={`grid grid-cols-1 md:grid-cols-[1fr_400px] gap-20 items-center mb-24 ${isAr ? 'flex-row-reverse' : ''}`}>
           <div className={isAr ? 'text-right' : 'text-left'}>
             <span className="text-[11px] uppercase tracking-[4px] text-gold-elite mb-6 block font-bold">
-              {isAr ? 'طبقة تصميم خدمات ضيوف كبار الشخصيات' : 'VIP Guest Services Design Layer'}
+              {isAr ? 'الكونسيرج والضيافة' : 'Concierge & Hospitality'}
             </span>
             <h2 className={`text-5xl md:text-8xl mb-8 text-gold-elite uppercase leading-[0.9] ${isAr ? 'font-sans' : 'font-serif'}`}>
-              {isAr ? <>ضيافة ثقافية<br /><span className="italic text-sand-warm">سلسة</span></> : <>SEAMLESS <br /><span className="italic text-sand-warm">CULTURAL</span> <br />HOSPITALITY</>}
+              {isAr ? <>دعم الضيوف<br /><span className="italic text-sand-warm">السلس</span></> : <>SEAMLESS <br /><span className="italic text-sand-warm">GUEST</span> <br />SUPPORT</>}
             </h2>
-            <p className="text-lg md:text-xl text-sand-warm/60 font-light max-w-xl leading-relaxed mb-10">
+            <p className="text-lg md:text-xl text-sand-warm/60 font-light max-w-xl leading-relaxed mb-6">
               {isAr 
-                ? 'نقدم بنية تحتية متكاملة للضيافة مصممة للتنفيذ بدقة متناهية. كل نقطة اتصال - من الهبوط إلى المغادرة - تدار بدقة عملياتية تامة وأناقة ثقافية.' 
-                : 'We provide a full-service hospitality infrastructure designed for flawless production. Every touchpoint—from touchdown to departure—is managed with absolute operational precision and cultural elegance.'}
+                ? 'إدارة خفية تدعم تجربة لا تشوبها شائبة. نحن ندير بنية تحتية متكاملة للضيافة.' 
+                : 'Unseen management powering a flawless experience. We manage a full-service hospitality infrastructure.'}
             </p>
+            
+            <div className={`bg-charcoal-dark/50 border border-gold-elite/20 p-4 rounded-xl flex flex-col gap-2 max-w-xl mb-10 ${isAr ? 'items-end' : ''}`}>
+              <div className="text-[9px] uppercase tracking-[2px] text-gold-elite">Experience Note</div>
+              <div className={`text-xs text-sand-warm/60 font-light leading-relaxed ${isAr ? 'text-right' : ''}`}>
+                {isAr 
+                  ? 'يشعر الضيوف بحضور صامت ومستمر يتوقع احتياجاتهم قبل ظهورها، مما يضمن زيارة خالية من الجهد.' 
+                  : 'Guests feel a silent, constant presence anticipating their needs before they arise, ensuring an effortless visit.'}
+              </div>
+            </div>
             {onOpenPresentation && (
                <button 
                 onClick={onOpenPresentation}
@@ -80,8 +89,13 @@ export default function HospitalitySystem({ onOpenPresentation, lang = 'en' }: H
                 viewport={{ once: true }}
                 className={`bg-white/5 border border-white/5 p-10 rounded-[3rem] hover:border-gold-elite/30 transition-all group ${isAr ? 'text-right' : ''}`}
               >
-                <div className={`w-14 h-14 rounded-2xl bg-gold-elite/10 flex items-center justify-center text-gold-elite mb-10 group-hover:bg-gold-elite group-hover:text-charcoal transition-all ${isAr ? 'mr-0 ml-auto' : ''}`}>
-                  <Icon size={28} />
+                <div className={`flex justify-between items-start mb-10 ${isAr ? 'flex-row-reverse' : ''}`}>
+                  <div className="w-14 h-14 rounded-2xl bg-gold-elite/10 flex items-center justify-center text-gold-elite group-hover:bg-gold-elite group-hover:text-charcoal transition-all">
+                    <Icon size={28} />
+                  </div>
+                  <div className={`px-3 py-1 rounded-full border border-gold-elite/30 text-[9px] uppercase tracking-widest text-gold-elite/70 ${isAr ? 'font-sans' : ''}`}>
+                    {isAr ? 'إدارة ميدانية' : 'On-Ground Management'}
+                  </div>
                 </div>
                 
                 <h3 className={`text-3xl mb-6 font-serif ${isAr ? 'font-sans' : ''}`}>{isAr ? node.titleAr : node.title}</h3>
@@ -103,9 +117,9 @@ export default function HospitalitySystem({ onOpenPresentation, lang = 'en' }: H
         </div>
 
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 opacity-40">
-           <div className="text-[10px] uppercase tracking-[3px] py-4 border-y border-gold-elite/20 text-center">{isAr ? 'بروتوكول واتساب ما قبل الوصول' : 'Pre-Arrival WhatsApp Protocol'}</div>
-           <div className="text-[10px] uppercase tracking-[3px] py-4 border-y border-gold-elite/20 text-center">{isAr ? 'توجيه ما بعد الوصول' : 'Post-Arrival Orientation'}</div>
-           <div className="text-[10px] uppercase tracking-[3px] py-4 border-y border-gold-elite/20 text-center">{isAr ? 'متابعة ارتباط الذاكرة' : 'Memory Hook Follow-up'}</div>
+           <div className="text-[10px] uppercase tracking-[3px] py-4 border-y border-gold-elite/20 text-center">{isAr ? 'إحاطة وتجهيز ما قبل الوصول' : 'Pre-Arrival Briefing & Setup'}</div>
+           <div className="text-[10px] uppercase tracking-[3px] py-4 border-y border-gold-elite/20 text-center">{isAr ? 'تتبع ميداني في الوقت الفعلي' : 'Live On-Ground Tracking'}</div>
+           <div className="text-[10px] uppercase tracking-[3px] py-4 border-y border-gold-elite/20 text-center">{isAr ? 'متابعات ما بعد المغادرة' : 'Post-Departure Follow-Ups'}</div>
         </div>
       </div>
     </section>

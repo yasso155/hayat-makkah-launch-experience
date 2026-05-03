@@ -11,25 +11,28 @@ const TECH_ITEMS = (lang: 'en' | 'ar') => {
     {
       title: isAr ? 'بوابة OLED الشفافة' : 'Transparent OLED Portal',
       feature: isAr ? 'دقة 8K' : '8K Clarity',
+      execution: isAr ? 'تزامن مباشر' : 'Live Sync',
       description: isAr 
-        ? 'بوابة شفافة بطول 5 أمتار تعرض المخططات المعمارية لحياة مكة برسومات ثلاثية الأبعاد عائمة.' 
-        : 'A 5-meter transparent gateway showcasing the Hayat Makkah architectural plans in floating 3D graphics.',
+        ? 'بوابة شفافة بطول 5 أمتار تعرض المخططات المعمارية. يتم التحكم في محتواها مباشرة من غرفة التحكم الرئيسية.' 
+        : 'A 5-meter transparent gateway showcasing architectural plans in floating 3D. Content is actively managed and triggered by our live show callers.',
       icon: Monitor
     },
     {
       title: isAr ? 'منحوتة حركية مغناطيسية' : 'Magnetic Kinetic Sculpture',
       feature: isAr ? 'انعدام الجاذبية' : 'Zero Gravity',
+      execution: isAr ? 'معايرة دقيقة' : 'Precision-Calibrated',
       description: isAr 
-        ? 'نموذج فيزيائي للمشروع يطفو في الفضاء، يستجيب لقرب الضيوف بحركة عضوية دقيقة.' 
-        : 'The physical model of the project levitates in space, responding to guest proximity with subtle organic motion.',
+        ? 'نموذج فيزيائي يطفو في الفضاء بحركة عضوية دقيقة. يخضع لمراقبة تقنية مستمرة لضمان التوازن المثالي.' 
+        : 'The physical model levitates in space with subtle organic motion. It is continuously monitored by our technical crew to ensure perfect stabilization.',
       icon: Radio
     },
     {
       title: isAr ? 'مناظر صوتية توليدية' : 'Generative Soundscapes',
       feature: isAr ? 'صوت ثلاثي الأبعاد مكاني' : '3D Spatial Audio',
+      execution: isAr ? 'مراقبة حية' : 'Live-Monitored',
       description: isAr 
-        ? 'موسيقى تصويرية مؤلفة بواسطة الذكاء الاصطناعي تمزج بين الآلات التقليدية التركية والإيقاعات السعودية الحديثة.' 
-        : 'An AI-composed soundtrack blending Turkish traditional instruments with modern Saudi rhythms, spatialized to the visitor position.',
+        ? 'موسيقى تصويرية تمزج بين الآلات التركية والإيقاعات السعودية، تتم معايرتها حياً لتتناسب مع ديناميكية الفعالية.' 
+        : 'An AI-composed soundtrack blending Turkish instruments with Saudi rhythms, actively mixed on-site to match the crowd dynamic.',
       icon: Cpu
     }
   ];
@@ -42,17 +45,30 @@ export default function TechGallery({ lang = 'en' }: TechGalleryProps) {
   return (
     <section id="tech" className="py-32 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className={`flex items-center gap-4 mb-20 ${isAr ? 'flex-row-reverse text-right' : ''}`}>
-          <div className="w-12 h-12 rounded-xl bg-gold-elite/10 flex items-center justify-center border border-gold-elite/20">
-            <Zap className="text-gold-elite" />
+        <div className={`mb-16 ${isAr ? 'flex flex-col items-end text-right' : ''}`}>
+          <div className={`flex items-center gap-4 mb-6 ${isAr ? 'flex-row-reverse' : ''}`}>
+            <span className="w-8 h-px bg-gold-elite/40" />
+            <span className="text-[11px] uppercase tracking-[4px] text-gold-elite font-bold">
+              {isAr ? 'السرد الرقمي' : 'Digital Storytelling'}
+            </span>
           </div>
-          <div>
-            <h2 className={`text-4xl md:text-5xl ${isAr ? 'font-sans' : 'font-display'}`}>
-              {isAr ? <>معرض <span className="italic text-gold-elite">طليعي</span></> : <>Avant-Garde <span className="italic text-gold-elite">Showcase</span></>}
-            </h2>
-            <p className="text-xs uppercase tracking-[.4em] opacity-40 mt-2">
-              {isAr ? 'دمج الإرث مع المستقبل' : 'Integrating Legacy with Tomorrow'}
-            </p>
+          
+          <h2 className={`text-4xl md:text-5xl mb-6 ${isAr ? 'font-sans' : 'font-display'}`}>
+            {isAr ? <>سرد بصري <span className="italic text-gold-elite">متزامن</span></> : <>SYNCHRONIZED VISUAL <span className="italic text-gold-elite">NARRATIVE</span></>}
+          </h2>
+          <p className="text-sand-warm/60 font-light text-lg max-w-lg mb-8">
+            {isAr 
+              ? '20 شاشة رقمية موزعة عبر المدخل والممرات والطريق إلى القاعة.' 
+              : '20 digital screens across the Entrance, Corridors, and Hall approach.'}
+          </p>
+
+          <div className="bg-charcoal-dark/50 border border-gold-elite/20 p-4 rounded-xl flex flex-col gap-2 max-w-md">
+            <div className="text-[9px] uppercase tracking-[2px] text-gold-elite">Experience Note</div>
+            <div className="text-xs text-sand-warm/60 font-light leading-relaxed">
+              {isAr 
+                ? 'ينغمس الضيوف في قصة محيطية بـ 360 درجة، يسيرون جسدياً عبر إضاءة متغيرة ومناظر رقمية ديناميكية.' 
+                : 'Guests are immersed in a 360-degree story, physically walking through shifting light and dynamic digital landscapes.'}
+            </div>
           </div>
         </div>
 
@@ -70,9 +86,15 @@ export default function TechGallery({ lang = 'en' }: TechGalleryProps) {
                 <item.icon size={32} strokeWidth={1.5} />
               </div>
               
-              <div className={`text-[10px] uppercase tracking-widest text-emerald-deep font-bold mb-4 flex items-center gap-2 ${isAr ? 'flex-row-reverse' : ''}`}>
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-deep" />
-                {item.feature}
+              <div className={`flex flex-wrap gap-2 mb-4 ${isAr ? 'flex-row-reverse' : ''}`}>
+                <div className={`text-[9px] uppercase tracking-widest text-emerald-deep font-bold flex items-center gap-1.5 ${isAr ? 'flex-row-reverse' : ''}`}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-deep" />
+                  {item.feature}
+                </div>
+                <div className={`text-[9px] uppercase tracking-widest text-gold-elite font-bold flex items-center gap-1.5 ${isAr ? 'flex-row-reverse' : ''}`}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold-elite" />
+                  {item.execution}
+                </div>
               </div>
               
               <h3 className={`text-2xl mb-6 ${isAr ? 'font-sans' : ''}`}>{item.title}</h3>

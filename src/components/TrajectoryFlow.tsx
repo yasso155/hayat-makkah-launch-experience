@@ -12,12 +12,28 @@ export default function TrajectoryFlow({ lang = 'en' }: TrajectoryFlowProps) {
     <section className="py-32 bg-charcoal relative overflow-hidden">
       <div className={`max-w-7xl mx-auto px-6 ${isAr ? 'text-right' : 'text-left'}`}>
         <div className={`mb-20 ${isAr ? 'flex flex-col items-start' : ''}`}>
+          <div className={`flex items-center gap-4 mb-6 ${isAr ? 'flex-row-reverse' : ''}`}>
+            <span className="w-8 h-px bg-gold-elite/40" />
+            <span className="text-[11px] uppercase tracking-[4px] text-gold-elite font-bold">
+              {isAr ? 'رحلة تدفق الضيوف' : 'Guest Flow Journey'}
+            </span>
+          </div>
+
           <h2 className={`text-5xl md:text-7xl mb-6 ${isAr ? 'font-sans' : ''}`}>
-            {isAr ? <>المسار <span className="text-gold-elite italic">الاستراتيجي</span></> : <>THE <span className="text-gold-elite italic">TRAJECTORY</span></>}
+            {isAr ? <>رحلة <span className="text-gold-elite italic">مكانية موجهة</span></> : <>A GUIDED SPATIAL <span className="text-gold-elite italic">JOURNEY</span></>}
           </h2>
-          <p className="text-sand-warm/40 font-light tracking-[2px] uppercase text-xs">
-            {isAr ? 'رسم تدفق كرم الضيافة السلس لكبار المستثمرين.' : 'Mapping the seamless flow of high-net-worth hospitality.'}
+          <p className="text-sand-warm/60 font-light text-lg max-w-lg mb-8">
+            {isAr ? 'تسلسل سلس للتجارب من الوصول إلى التواصل.' : 'A seamless progression of experiences from arrival to networking.'}
           </p>
+
+          <div className="bg-charcoal-dark/50 border border-gold-elite/20 p-4 rounded-xl flex flex-col gap-2 max-w-md">
+            <div className="text-[9px] uppercase tracking-[2px] text-gold-elite">Experience Note</div>
+            <div className="text-xs text-sand-warm/60 font-light leading-relaxed">
+              {isAr 
+                ? 'يختبر الضيوف حركة جسدية خالية من الاحتكاك، ويتم توجيههم ببديهية عبر كل مرحلة دون تردد.' 
+                : 'Guests experience a frictionless physical movement, intuitively guided through each phase without hesitation.'}
+            </div>
+          </div>
         </div>
 
         <div className="relative pt-20">
@@ -38,9 +54,13 @@ export default function TrajectoryFlow({ lang = 'en' }: TrajectoryFlowProps) {
                   <span className="text-sm font-bold text-gold-elite">{index + 1}</span>
                 </div>
                 
-                <h3 className={`text-2xl font-serif mb-4 text-sand-warm group-hover:text-gold-elite transition-colors ${isAr ? 'font-sans' : ''}`}>
+                <h3 className={`text-2xl font-serif mb-2 text-sand-warm group-hover:text-gold-elite transition-colors ${isAr ? 'font-sans' : ''}`}>
                   {isAr ? point.titleAr : point.title}
                 </h3>
+
+                <p className="text-[10px] uppercase tracking-widest text-gold-elite/60 mb-6 group-hover:text-gold-elite transition-colors">
+                  {isAr ? point.subtitleAr : point.subtitle}
+                </p>
                 
                 <div className="w-8 h-px bg-gold-elite/20 group-hover:w-12 transition-all" />
               </motion.div>

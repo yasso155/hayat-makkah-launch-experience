@@ -14,71 +14,70 @@ export interface TrajectoryPoint {
 
 export const ASSETS = {
   logo: '/assets/logo.png',
-  cover: '/assets/cover.png',
-  hero: '/assets/Who We Are.png',
-  overview: '/assets/Experience Overview.png',
-  corridor: '/assets/Firefly_gpt-image_luxury event entrance tunnel with LED walls, futuristic corridor, glowing light strip 386796.png',
+  cover: '/assets/cover image.png',
+  hero: '/assets/vesual identity.png',
+  overview: '/assets/Firefly_gpt-image_immersive tunnel with light strips, glowing patterns, guests walking through, atmosph 386796.png',
+  corridor: '/assets/immersive corridor with projection mapping on walls and floor, showing futuristic.png',
   networking: '/assets/networking lounge.png',
   stage: '/assets/stage.png',
   flow: '/assets/Mobility Flow.png',
   host: '/assets/The Personal Host.png',
   uniform: '/assets/Firefly_gpt-image_close-up of luxury staff uniform, embroidered cultural pattern, elegant fabric textur 386796.png',
-  smart: '/assets/Smart QR System.png',
+  smart: '/assets/Execution Command.png',
   concierge: '/assets/Hotline Concierge.png',
   welcome: '/assets/Arrival Details (2).png',
   car: '/assets/Firefly_gpt-image_luxury car GMC with subtle emerald and logo gold branding, , premium transport design 386796.png',
   tablet: '/assets/Firefly_gpt-image_luxury car interior, tablet screen showing personalized welcome message with guest na 386796.png',
-  signage: '/assets/Firefly_gpt-image_event pickup signage stand, emerald green with gold text, minimal typography, placed  386796.png',
+  signage: '/assets/entrance arch.png',
   package: '/assets/Firefly_gpt-image_luxury hotel welcome package, emerald leather folder with gold embossed logo, premium 386796.png',
   gift: '/assets/Firefly_gpt-image_luxury gift set with branded cards, keychains, packaging, emerald and gold identity,  386796.png',
   amenities: '/assets/Micro Luxury.png',
-  night: '/assets/Firefly_gpt-image_luxury night event scene, cultural wall with arabic typography, warm lighting, calm a 386796.png',
+  night: '/assets/saudi orchestra.jpeg',
   reveal: '/assets/Firefly_gpt-image_futuristic building emerging from light, holographic architecture reveal, glowing par 386796.png',
   airport: '/assets/Airport Arrival.png',
   closing: '/assets/Closing.png',
-  approach: '/assets/Our Approach.png',
-  gest_flow: '/assets/The Trajectory.png'
+  approach: '/assets/Firefly_gpt-image_futuristic building emerging from light, holographic architecture reveal, glowing par 386796.png',
+  gest_flow: '/assets/Guided Spatial Journey.png'
 };
 
 export const SECTIONS: (EventSection & { titleAr: string; descriptionAr: string })[] = [
   {
     id: 'mobility-1',
-    title: 'Seamless Mobility',
-    titleAr: 'تنقل سلس',
-    description: 'The Cultural Concierge in your pocket. 24/7 unified smart integration across all touchpoints, from touchdown to departure.',
-    descriptionAr: 'الكونسيرج الثقافي في جيبك. تكامل ذكي موحد على مدار الساعة طوال أيام الأسبوع عبر جميع نقاط الاتصال، من الوصول وحتى المغادرة.',
-    category: 'mobility',
+    title: 'The Entrance Gate',
+    titleAr: 'بوابة الدخول',
+    description: 'The first impression architecture. A monumental gateway establishing the visual identity and setting the tone for the journey ahead.',
+    descriptionAr: 'هندسة الانطباع الأول. بوابة ضخمة ترسخ الهوية البصرية وتحدد مسار الرحلة القادمة.',
+    category: 'spatial',
     image: ASSETS.flow
   },
   {
     id: 'walk-1',
-    title: 'Walk the Vision',
-    titleAr: 'مسار الرؤية',
-    description: '20 synchronized digital screens wrapping the approach in an immersive corridor of Saudi-Turkish architectural dialogue.',
-    descriptionAr: '20 شاشة رقمية متزامنة تغلف المدخل في ممر غامر من الحوار المعماري السعودي التركي.',
+    title: 'The Immersive Tunnel',
+    titleAr: 'النفق الغامر',
+    description: 'The transitional walk. A physically built environment enveloped in 20 synchronized digital screens, shifting the guest from the outside world into our narrative.',
+    descriptionAr: 'المسار الانتقالي. بيئة مبنية فعلياً ومغلفة بـ 20 شاشة رقمية متزامنة، تنقل الضيف من العالم الخارجي إلى سردنا الخاص.',
     category: 'spatial',
     image: ASSETS.corridor
   },
   {
     id: 'wow-1',
-    title: 'The Wow Moment',
-    titleAr: 'لحظة الإبهار',
-    description: 'A cinematic sculptural reveal using kinetic light and holographic projection that defines the future of luxury living.',
-    descriptionAr: 'كشف منحوت سينمائي باستخدام الضوء الحركي والاسقاط الهولوغرافي الذي يحدد مستقبل المعيشة الفاخرة.',
+    title: 'The Main Stage',
+    titleAr: 'المسرح الرئيسي',
+    description: 'The central moment of focus. A structurally imposing backdrop designed for the cinematic reveal, integrating lighting and holographic installations.',
+    descriptionAr: 'لحظة التركيز المركزية. خلفية مهيبة بنيوياً مصممة للكشف السينمائي، تدمج الإضاءة والتركيبات الهولوغرافية.',
     category: 'tech',
     image: ASSETS.stage
   }
 ];
 
 export const TRAJECTORY: (TrajectoryPoint & { titleAr: string; subtitleAr: string })[] = [
-  { id: 'arrival', title: 'Arrival', titleAr: 'الوصول', subtitle: 'Airport Meet & Greet', subtitleAr: 'الاستقبال في المطار' },
-  { id: 'transfer', title: 'Elite Transfer', titleAr: 'النقل النخبوي', subtitle: 'Branded VIP Mobility', subtitleAr: 'تنقل كبار الشخصيات المتميز' },
-  { id: 'host', title: 'Personal Host', titleAr: 'المضيف الشخصي', subtitle: 'Guest Experience Companion', subtitleAr: 'رفيق تجربة الضيف' },
-  { id: 'walk', title: 'Immersive Walk', titleAr: 'ممر التجربة', subtitle: 'Visual Storytelling', subtitleAr: 'سرد قصصي مرئي' },
-  { id: 'discovery', title: 'Discovery', titleAr: 'الاستكشاف', subtitle: 'Main Hall & Heritage', subtitleAr: 'القاعة الرئيسية والتراث' },
-  { id: 'reveal', title: 'The Reveal', titleAr: 'الكشف', subtitle: 'Ceremony', subtitleAr: 'المراسم' },
-  { id: 'connect', title: 'Connect', titleAr: 'التواصل', subtitle: 'Dinner & Networking', subtitleAr: 'العشاء والتواصل' },
-  { id: 'exit', title: 'Exit', titleAr: 'المغادرة', subtitle: 'Cultural Passport', subtitleAr: 'الجواز الثقافي' }
+  { id: 'arrival', title: 'Arrival', titleAr: 'الوصول', subtitle: 'First Impression', subtitleAr: 'الانطباع الأول' },
+  { id: 'transfer', title: 'Reception', titleAr: 'الاستقبال', subtitle: 'Cultural Welcome', subtitleAr: 'ترحيب ثقافي' },
+  { id: 'walk', title: 'Immersive Walk', titleAr: 'ممر التجربة', subtitle: 'Transitional Journey', subtitleAr: 'رحلة انتقالية' },
+  { id: 'discovery', title: 'Main Hall', titleAr: 'القاعة الرئيسية', subtitle: 'Designed Environment', subtitleAr: 'بيئة مصممة' },
+  { id: 'reveal', title: 'Ceremony', titleAr: 'المراسم', subtitle: 'The Core Narrative', subtitleAr: 'السرد الأساسي' },
+  { id: 'connect', title: 'Dinner', titleAr: 'العشاء', subtitle: 'Elevated Hospitality', subtitleAr: 'ضيافة راقية' },
+  { id: 'exit', title: 'Networking', titleAr: 'التواصل', subtitle: 'Seamless Engagement', subtitleAr: 'تفاعل سلس' }
 ];
 
 export const HOSPITALITY_NODES = [
@@ -86,253 +85,210 @@ export const HOSPITALITY_NODES = [
     id: 'airport',
     title: 'Airport Reception',
     titleAr: 'استقبال المطار',
-    description: 'A "Cultural Welcome" desk featuring signature emerald/gold branding, delivering chilled premium water and fine Turkish delight.',
-    descriptionAr: 'مكتب "الترحيب الثقافي" الذي يتميز بهوية الزمرد والذهب، ويقدم المياه الفاخرة المبردة والحلقوم التركي الفاخر.',
-    features: ['Meet & Greet Desk', 'Selam Welcome Card', 'Cultural Pin Protocol'],
-    featuresAr: ['مكتب الاستقبال', 'بطاقة ترحيب "سلام"', 'بروتوكول دبوس الثقافة']
+    description: 'A controlled "Cultural Welcome" operation delivering chilled premium water and fine Turkish delight, managed by our ground handlers.',
+    descriptionAr: 'عملية "ترحيب ثقافي" مُدارة لتقديم المياه الفاخرة المبردة والحلقوم التركي الفاخر، يديرها فريق الخدمات الأرضية لدينا.',
+    features: ['Active Flight Tracking', 'Selam Welcome Protocol', 'Operations Desk'],
+    featuresAr: ['تتبع الرحلات الحي', 'بروتوكول ترحيب "سلام"', 'مكتب العمليات']
   },
   {
     id: 'mobility',
     title: 'VIP Transfer',
     titleAr: 'نقل كبار الشخصيات',
-    description: 'Subtle branded luxury fleet equipped with tablets for real-time schedule tracking and multi-language audio greetings.',
-    descriptionAr: 'أسطول فاخر يحمل علامة تجارية رقيقة مجهز بأجهزة لوحية لتتبع الجدول الزمني في الوقت الفعلي والتحيات الصوتية متعددة اللغات.',
-    features: ['In-car Concierge Tablet', 'Signature Scent Layer', 'Arabic/Turkish Audio'],
-    featuresAr: ['جهاز لوحي للكونسيرج داخل السيارة', 'طبقة الرائحة المميزة', 'صوتيات عربية/تركية']
+    description: 'A fully coordinated luxury fleet monitored in real-time, equipped with tablets for live schedule updates.',
+    descriptionAr: 'أسطول فاخر منسق بالكامل ومراقب في الوقت الفعلي، مجهز بأجهزة لوحية لتحديثات الجدول الزمني المباشرة.',
+    features: ['Fleet Coordination System', 'Live GPS Tracking', 'Secure Route Management'],
+    featuresAr: ['نظام تنسيق الأسطول', 'تتبع GPS مباشر', 'إدارة الطرق الآمنة']
   },
   {
     id: 'companion',
     title: 'Guest Companion',
     titleAr: 'رفيق الضيف',
-    description: 'Dedicated proactive hosts providing immediate assistance and navigating the "trajectory" with personalized attention.',
-    descriptionAr: 'مضيفون مخصصون مبادرون يقدمون المساعدة الفورية ويتنقلون في "المسار" باهتمام شخصي.',
-    features: ['Proactive Assistance', 'Full Digital Guest Profile', 'Direct WhatsApp Line'],
-    featuresAr: ['المساعدة المبادرة', 'ملف رقمي كامل للضيف', 'خط مباشر للواتساب']
+    description: 'Dedicated hosts executing pre-planned itineraries, navigating the flow with direct access to command central.',
+    descriptionAr: 'مضيفون مخصصون ينفذون مسارات مخططة مسبقاً، ويديرون تدفق الضيوف مع وصول مباشر إلى مركز القيادة.',
+    features: ['Live Command Link', 'Full Digital Guest Profile', 'Direct Protocol Support'],
+    featuresAr: ['اتصال مباشر بمركز القيادة', 'ملف رقمي كامل للضيف', 'دعم البروتوكول المباشر']
   }
 ];
 
 export const ALCHEMY = [
-  { title: 'Emotional Connection', titleAr: 'الاتصال العاطفي', desc: 'Immersive storytelling over passive viewing.', descAr: 'سرد قصصي غامر بدلاً من المشاهدة السلبية.' },
-  { title: 'Premium Positioning', titleAr: 'مكانة متميزة', desc: 'Uncompromising architectural & hospitality standards.', descAr: 'معايير معمارية وضيافة لا تهاون فيها.' },
-  { title: 'Shareable Moments', titleAr: 'لحظات قابلة للمشاركة', desc: 'Visually stunning, hyper-curated touchpoints.', descAr: 'نقاط اتصال مبهرة بصرياً ومنسقة بعناية فائقة.' },
-  { title: 'Sales-Driven Architecture', titleAr: 'عمارة موجهة للمبيعات', desc: 'A physical environment optimized for VIP investor conversion.', descAr: 'بيئة فيزيائية محسنة لتحويل مستثمري النخبة.' }
+  { title: 'Emotional Connection', titleAr: 'الاتصال العاطفي', desc: 'Delivered through scripted touchpoints and precision timing.', descAr: 'يتم تقديمه من خلال نقاط اتصال مدروسة وتوقيت دقيق.' },
+  { title: 'Premium Positioning', titleAr: 'مكانة متميزة', desc: 'Maintained through zero-compromise operational standards.', descAr: 'يتم الحفاظ عليها من خلال معايير تشغيلية لا تهاون فيها.' },
+  { title: 'Shareable Moments', titleAr: 'لحظات قابلة للمشاركة', desc: 'Engineered by our on-ground creative & logistics team.', descAr: 'تم تصميمها بواسطة فريقنا الإبداعي واللوجستي الميداني.' },
+  { title: 'Sales-Driven Architecture', titleAr: 'عمارة موجهة للمبيعات', desc: 'Backed by real-time flow management and guest intelligence.', descAr: 'مدعومة بإدارة التدفق في الوقت الفعلي وذكاء الضيوف.' }
 ];
 
 export const PRESENTATION_SLIDES = [
   {
     id: 1,
     type: 'cover',
-    title: 'Seamless Cultural Hospitality',
-    titleAr: 'ضيافة ثقافية سلسة',
-    subtitle: 'EMLAK KONUT | VIP GUEST EXPERIENCE',
-    subtitleAr: 'إملاك كونوت | تجربة ضيوف كبار الشخصيات',
+    title: 'EMLAK EVENT Proposal',
+    titleAr: 'مقترح فعالية إملاك',
+    subtitle: 'VISION & CONCEPT',
+    subtitleAr: 'الرؤية والمفهوم',
     image: ASSETS.cover,
     bg: 'bg-emerald-deep'
   },
   {
     id: 2,
     type: 'content',
-    title: 'The Production Force',
-    titleAr: 'قوة الإنتاج',
-    subtitle: 'We don’t just design. We execute.',
-    subtitleAr: 'نحن لا نصمم فقط. نحن ننفذ.',
-    description: 'A production company dedicated to flawless VIP delivery.',
-    descriptionAr: 'شركة إنتاج مخصصة لتنفيذ أرقى تجارب كبار الشخصيات.',
+    title: 'Visual Identity',
+    titleAr: 'الهوية البصرية',
+    subtitle: 'VISION | A unified visual system',
+    subtitleAr: 'الرؤية | نظام بصري موحد',
+    description: 'Modern luxury meets Islamic geometric elegance and Makkah-inspired tones.\n\nEXPERIENCE NOTE: Guests navigate a cohesive aesthetic world, recognizing intentional design at every turn.',
+    descriptionAr: 'الفخامة الحديثة تلتقي بالأناقة الهندسية الإسلامية والألوان المستوحاة من مكة.\n\nتفاصيل التجربة: يتنقل الضيوف في عالم جمالي متماسك، ليلاحظوا دقة التصميم وعنايته في كل زاوية.',
     image: ASSETS.hero
   },
   {
     id: 3,
     type: 'content',
-    title: 'Our Approach',
-    titleAr: 'نهجنا',
-    subtitle: 'Operational Excellence',
-    subtitleAr: 'التميز التشغيلي',
-    description: 'Precision at every touchpoint of the journey.',
-    descriptionAr: 'الدقة في كل نقطة اتصال خلال الرحلة.',
-    image: ASSETS.approach
+    title: 'A Guided Spatial Journey',
+    titleAr: 'رحلة مكانية موجهة',
+    subtitle: 'JOURNEY | Seamless progression',
+    subtitleAr: 'الرحلة | تسلسل حركي سلس',
+    description: 'Arrival → Reception → Immersive Walk → Main Hall → Ceremony → Dinner → Networking.\n\nEXPERIENCE NOTE: Guests experience a frictionless physical movement, intuitively guided through each phase.',
+    descriptionAr: 'الوصول ← الاستقبال ← الممشى الغامر ← القاعة الرئيسية ← المراسم ← العشاء ← التواصل.\n\nتفاصيل التجربة: يختبر الضيوف تنقلاً انسيابياً، حيث يتم توجيههم ببديهية وسلاسة عبر كل مرحلة.',
+    image: ASSETS.gest_flow
   },
   {
     id: 4,
     type: 'content',
-    title: 'The Trajectory',
-    titleAr: 'المسار الاستراتيجي',
-    subtitle: 'Unified Ecosystem',
-    subtitleAr: 'منظومة موحدة',
-    description: 'A seamless journey from touchdown to departure.',
-    descriptionAr: 'رحلة سلسة من لحظة الهبوط وحتى المغادرة.',
-    image: ASSETS.gest_flow
+    title: 'Synchronized Narrative',
+    titleAr: 'سرد بصري متزامن',
+    subtitle: 'JOURNEY | 20 digital screens',
+    subtitleAr: 'الرحلة | 20 شاشة رقمية',
+    description: 'Content bridging the Project, Lifestyle, and Saudi–Turkish partnership across the corridors.\n\nEXPERIENCE NOTE: Guests are immersed in a 360-degree story, physically walking through dynamic digital landscapes.',
+    descriptionAr: 'محتوى يربط بين المشروع، أسلوب الحياة، والشراكة السعودية التركية عبر الممرات.\n\nتفاصيل التجربة: تجربة بصرية محيطية 360 درجة، يسير الضيوف خلالها عبر عوالم رقمية متغيرة.',
+    image: ASSETS.corridor
   },
   {
     id: 5,
     type: 'content',
-    title: 'Airport Arrival',
-    titleAr: 'الوصول للمطار',
-    subtitle: 'The First Selam',
-    subtitleAr: 'الترحيب الأول',
-    description: 'A "Selam" welcome ritual at the VIP Executive Wing. Small portable stands with emerald patterns and signature staff pins.',
-    descriptionAr: 'طقوس ترحيب "السلام" في جناح كبار الشخصيات. منصات متنقلة بنقوش زمردية ودبابيس هوية الموظفين.',
-    image: ASSETS.airport
+    title: 'The Entrance Gate',
+    titleAr: 'البوابة الرئيسية',
+    subtitle: 'ENVIRONMENT | First impression',
+    subtitleAr: 'البيئة | الانطباع الأول',
+    description: 'A monumental architectural gateway establishing the visual and emotional tone of the event.\n\nEXPERIENCE NOTE: Guests physically interact with a grand installation that feels imposing and deeply welcoming.',
+    descriptionAr: 'بوابة معمارية ضخمة تُرسي الطابع البصري والعاطفي للفعالية منذ اللحظة الأولى.\n\nتفاصيل التجربة: تركيب معماري ضخم يجمع بين المهابة وحفاوة الاستقبال، ليتفاعل معه الضيوف واقعياً.',
+    image: ASSETS.signage
   },
   {
     id: 6,
     type: 'content',
-    title: 'Arrival Rituals',
-    titleAr: 'طقوس الوصول',
-    subtitle: 'Sensory Hospitality',
-    subtitleAr: 'ضيافة حسية',
-    description: 'Cold towels, Taif rose scent, and premium Turkish Delight served with quiet, measured grace.',
-    descriptionAr: 'مناشف باردة، عطر ورد الطائف، وحلقوم تركي فاخر يقدم بهدوء ورقي.',
-    image: ASSETS.welcome
+    title: 'The Immersive Tunnel',
+    titleAr: 'المسار الغامر',
+    subtitle: 'ENVIRONMENT | Transitional walk',
+    subtitleAr: 'البيئة | المسار الانتقالي',
+    description: 'A built physical environment utilizing light and structure to transition the guest mindset.\n\nEXPERIENCE NOTE: Guests feel the physical transition from the outside world into the curated narrative space.',
+    descriptionAr: 'بيئة معمارية توظف الإضاءة والهياكل لتهيئة الضيوف ذهنياً.\n\nتفاصيل التجربة: يشعر الضيف بالانفصال التام عن العالم الخارجي والدخول في قلب السرد المكاني للحدث.',
+    image: ASSETS.overview
   },
   {
     id: 7,
     type: 'content',
-    title: 'VIP Transfer',
-    titleAr: 'نقل كبار الشخصيات',
-    subtitle: 'Silent Presence',
-    subtitleAr: 'حضور صامت',
-    description: 'Subtle vehicle branding with cultural patterns. A sanctuary on wheels featuring integrated Wi-Fi and signature scents.',
-    descriptionAr: 'هوية مركبات راقية بنقوش ثقافية. ملاذ متنقل يضم واي فاي وعطوراً حصرية.',
-    image: ASSETS.car
+    title: 'The Main Stage',
+    titleAr: 'المسرح الرئيسي',
+    subtitle: 'ENVIRONMENT | Central moment',
+    subtitleAr: 'البيئة | ذروة الحدث',
+    description: 'A structurally imposing backdrop designed specifically for the cinematic Master Plan reveal.\n\nEXPERIENCE NOTE: Guests sit before a massive, physically built stage that commands attention and respect.',
+    descriptionAr: 'مسرح بتصميم مهيب بُني خصيصاً للحظة الكشف السينمائي عن المخطط الرئيسي.\n\nتفاصيل التجربة: يتواجد الضيوف أمام هيكل معماري ضخم يفرض حضوره ويخطف الأنظار.',
+    image: ASSETS.stage
   },
   {
     id: 8,
     type: 'content',
-    title: 'The Tablet Concierge',
-    titleAr: 'كونسيرج الجهاز اللوحي',
-    subtitle: 'In-Car Intelligence',
-    subtitleAr: 'ذكاء داخل السيارة',
-    description: 'Integrated tablets providing real-time itineraries and Ar/En/Tr audio welcome messages.',
-    descriptionAr: 'أجهزة لوحية متكاملة توفر جداول العمل ورسائل ترحيب صوتية بالعربية والإنجليزية والتركية.',
-    image: ASSETS.tablet
+    title: 'Cultural Expression',
+    titleAr: 'التناغم الثقافي',
+    subtitle: 'EXPERIENCE | Symbolic unity',
+    subtitleAr: 'التجربة | لحظة وحدة رمزية',
+    description: 'The Saudi National Orchestra and Turkish Tribute blending deeply emotional and controlled performances.\n\nEXPERIENCE NOTE: Guests witness a powerful live vocal tribute that resonates emotionally and physically through the space.',
+    descriptionAr: 'أداء مشترك بين الأوركسترا الوطنية السعودية والتركية يدمج بين العمق العاطفي والتحكم الفني الدقيق.\n\nتفاصيل التجربة: عرض صوتي حي يملأ الأرجاء، ليخلق لحظة وجدانية ملموسة وذكريات لا تُنسى.',
+    image: ASSETS.night
+  },
+  {
+    id: 9,
+    type: 'content',
+    title: 'Seamless Hospitality',
+    titleAr: 'ضيافة استثنائية',
+    subtitle: 'EXPERIENCE | VIP Guest Support',
+    subtitleAr: 'التجربة | عناية فائقة بالنخبة',
+    description: 'Unseen management powering a flawless journey through table setups and spatial navigation.\n\nEXPERIENCE NOTE: Guests feel a silent, constant presence anticipating their needs, ensuring an effortless visit.',
+    descriptionAr: 'إدارة خفية تضمن تجربة مثالية بدءاً من تجهيزات الطاولات وحتى انسيابية الحركة داخل المكان.\n\nتفاصيل التجربة: يلمس الضيوف عناية فائقة وحضوراً خفياً يستبق احتياجاتهم لضمان راحة مطلقة.',
+    image: ASSETS.host
   },
   {
     id: 10,
     type: 'content',
-    title: 'Personal Host',
-    titleAr: 'المضيف الشخصي',
-    subtitle: 'The Human Bridge',
-    subtitleAr: 'الجسر البشري',
-    description: 'Proactive "Guest Experience Hosts" equipped with smart tablets and trained in diplomatic protocol.',
-    descriptionAr: 'مضيفو تجربة الضيوف المبادئون، مجهزون بأجهزة لوحية ذكية ومدربون على البروتوكول الدبلوماسي.',
-    image: ASSETS.host
+    title: 'Physical Production',
+    titleAr: 'التنفيذ المعماري',
+    subtitle: 'PRODUCTION | Designed & Built',
+    subtitleAr: 'التنفيذ | دقة التصميم والبناء',
+    description: 'Every installation is technically designed for flawless real-world execution and structural integrity.\n\nEXPERIENCE NOTE: Guests perceive the high production value through the seamless integration of physical build and finish.',
+    descriptionAr: 'كل مجسم مصمم هندسياً ليضمن تنفيذاً واقعياً خالياً من العيوب ومتانة هيكلية تامة.\n\nتفاصيل التجربة: يدرك الضيف مستوى الإنتاج العالي من خلال جودة البناء المادي والتشطيبات الفاخرة.',
+    image: ASSETS.approach
   },
   {
     id: 11,
     type: 'content',
-    title: 'Mobility Flow',
-    titleAr: 'مسار التنقل',
-    subtitle: 'Zero Friction',
-    subtitleAr: 'انسيابية مطلقة',
-    description: 'Segmented pickup points and unified signage. Dynamic QR codes for precise car and timing allocation.',
-    descriptionAr: 'نقاط التقاء مقسمة ولوحات إرشادية موحدة. رموز QR ديناميكية لتحديد السيارات والمواعيد بدقة.',
-    image: ASSETS.flow
+    title: 'Execution Command',
+    titleAr: 'منظومة التحكم',
+    subtitle: 'PRODUCTION | Real-Time Control',
+    subtitleAr: 'التنفيذ | إدارة لحظية',
+    description: 'A unified command system coordinating the spatial environments, digital content, and live show callers.\n\nEXPERIENCE NOTE: Guests experience zero technical friction; the physical environment responds flawlessly to the event.',
+    descriptionAr: 'غرفة تحكم مركزية تنسق بذكاء بين البيئة المكانية، المحتوى الرقمي، وفرق العرض المباشر.\n\nتفاصيل التجربة: تجربة تقنية متكاملة وخالية من الانقطاعات، حيث تتفاعل البيئة بتناغم تام مع مجريات الحدث.',
+    image: ASSETS.smart
   },
   {
     id: 12,
     type: 'content',
-    title: 'The Smart Layer',
-    titleAr: 'الطبقة الذكية',
-    subtitle: 'Unified Command',
-    subtitleAr: 'قيادة موحدة',
-    description: 'One QR ecosystem linking the Guest, the Hotline, the Host, and the Transport fleet.',
-    descriptionAr: 'منظومة QR واحدة تربط الضيف والخط الساخن والمضيف وأسطول النقل.',
-    image: ASSETS.smart
+    title: 'Networking Environment',
+    titleAr: 'ملتقى النخبة',
+    subtitle: 'CLOSING | The Final Impression',
+    subtitleAr: 'الختام | الانطباع الأخير',
+    description: 'A curated conclusion to the spatial journey with elegant setups encouraging elite investment conversations.\n\nEXPERIENCE NOTE: Guests transition into a relaxed yet premium physical setting, surrounded by modern luxury.',
+    descriptionAr: 'ختام فاخر للرحلة المكانية، مصمم بعناية لتوفير مساحة مثالية لنقاشات الاستثمار وفرص الأعمال.\n\nتفاصيل التجربة: ينتقل الضيوف إلى بيئة راقية ومريحة، محاطين بتفاصيل الفخامة الحديثة.',
+    image: ASSETS.networking
   },
   {
     id: 13,
     type: 'content',
-    title: 'Cultural Concierge',
-    titleAr: 'الكونسيرج الثقافي',
-    subtitle: 'Hotline 24/7',
-    subtitleAr: 'الخط الساخن على مدار الساعة',
-    description: 'Expert Ar/Tr support responding in < 3 rings. Handling itineraries, emergencies, and local insights.',
-    descriptionAr: 'دعم خبير بالعربية والتركية يستجيب في أقل من 3 رنات. معالجة المسارات والطوارئ والمعلومات المحلية.',
-    image: ASSETS.concierge
-  },
-  {
-    id: 14,
-    type: 'content',
-    title: 'Integration System',
-    titleAr: 'نظام التكامل',
-    subtitle: 'Connected Logistics',
-    subtitleAr: 'لوجستيات متصلة',
-    description: 'Visual identity parity across all touchpoints: from WhatsApp messages to physical car cards.',
-    descriptionAr: 'تماثل الهوية البصرية عبر جميع نقاط الاتصال: من رسائل الواتساب إلى بطاقات السيارات المادية.',
-    image: ASSETS.gift
-  },
-  {
-    id: 15,
-    type: 'content',
-    title: 'Micro Luxury',
-    titleAr: 'الفخامة الدقيقة',
-    subtitle: 'The Detail Gap',
-    subtitleAr: 'فجوة التفاصيل',
-    description: 'Scheduled WhatsApp sequences: Pre-arrival welcome, live support, and post-departure gratitude.',
-    descriptionAr: 'سلسلة رسائل واتساب مجدولة: ترحيب ما قبل الوصول، دعم مباشر، وامتنان ما بعد المغادرة.',
-    image: ASSETS.amenities
-  },
-  {
-    id: 16,
-    type: 'content',
-    title: 'Execution Force',
-    titleAr: 'قوة التنفيذ',
-    subtitle: 'Absolute Control',
-    subtitleAr: 'سيطرة مطلقة',
-    description: 'A production infrastructure designed to make every interaction feel seamless and effortless.',
-    descriptionAr: 'بنية تحتية للإنتاج مصممة لجعل كل تفاعل يبدو سلساً وبدون مجهود.',
-    image: ASSETS.reveal
-  },
-  {
-    id: 17,
-    type: 'content',
-    title: 'VIP Experience Recap',
-    titleAr: 'ملخص تجربة النخبة',
-    subtitle: 'Heritage & Hospitality',
-    subtitleAr: 'التراث والضيافة',
-    description: 'A legacy of two lands, flawlessly delivered for the future of Makkah.',
-    descriptionAr: 'إرث من بلدين، يتم تقديمه ببراعة لمستقبل مكة.',
-    image: ASSETS.night
-  },
-  {
-    id: 18,
-    type: 'closing',
-    title: 'Let’s Execute',
-    titleAr: 'لنبدأ التنفيذ',
-    subtitle: 'HAYAT MAKKAH | SEAMLESS HOSPITALITY',
-    subtitleAr: 'حياة مكة | ضيافة سلسة',
-    image: ASSETS.closing,
-    bg: 'bg-emerald-deep'
+    title: 'A World-Class Benchmark',
+    titleAr: 'معيار عالمي للتميز',
+    subtitle: 'CLOSING | Executed with Precision',
+    subtitleAr: 'الختام | تنفيذ فائق الدقة',
+    description: 'The entire experience system leaves a lasting mark of design excellence and operational control.\n\nEXPERIENCE NOTE: Guests depart with a clear understanding of the project\'s magnitude and the physical execution capabilities.',
+    descriptionAr: 'تترك التجربة بأكملها انطباعاً دائماً بالتميز المعماري والاحترافية التشغيلية التي لا تضاهى.\n\nتفاصيل التجربة: يغادر الضيف بصورة واضحة عن ضخامة المشروع والقدرة الفائقة على تنفيذه على أرض الواقع.',
+    image: ASSETS.closing
   }
 ];
 
 export const TIMELINE = [
   {
     time: '18:00',
-    title: 'Touchdown & Welcome',
-    subtitle: 'VIP Terminal Reception',
-    description: 'Initial entry into the Hayat Makkah ecosystem. Selective greeting and distribution of digital credentials.',
-    location: 'Jeddah Executive Wing'
+    title: 'Arrival & Reception',
+    subtitle: 'The First Impression',
+    description: 'Guests transition into the reception space, immediately enveloped in a unified visual identity and Makkah-inspired tones.',
+    location: 'Gate & Welcoming Lounge'
   },
   {
     time: '19:30',
-    title: 'The Great Walk',
-    subtitle: 'Digital Immersion',
-    description: 'A 200m journey through the Saudi-Turkish digital corridor, revealing the architectural philosophy through kinetic projections.',
-    location: 'Exhibition Hall Entrance'
+    title: 'The Immersive Walk',
+    subtitle: 'Digital Storytelling',
+    description: 'A physical transition through a built tunnel environment where 20 synchronized digital screens establish the core narrative.',
+    location: 'Digital Corridor'
   },
   {
     time: '20:30',
-    title: 'The Grand Reveal',
-    subtitle: 'Main Keynote',
-    description: 'Official unveiling of the Master Plan by Emlak Konut & NHC leadership. A cinematic experience of the future Holy City living.',
-    location: 'Hayat Theatre'
+    title: 'Cultural Experience',
+    subtitle: 'Saudi National Orchestra & Turkish Tribute',
+    description: 'Guests witness a powerful live vocal tribute echoing through the architectural space, concluding in a symbolic unity moment.',
+    location: 'Main Stage'
   },
   {
     time: '21:30',
-    title: 'Elite Networking',
-    subtitle: 'Gala Dinner',
-    description: 'Fine dining curated by elite regional chefs, followed by exclusive investment portfolio discussions.',
-    location: 'Starlight Pavilion'
+    title: 'Dinner & Networking',
+    subtitle: 'Elevated Hospitality',
+    description: 'A curated conclusion to the spatial journey. Custom table setups reflect the event’s geometric elegance in a premium setting.',
+    location: 'Networking Environment'
   }
 ];

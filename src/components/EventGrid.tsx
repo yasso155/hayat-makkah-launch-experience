@@ -13,15 +13,30 @@ export default function EventGrid({ lang = 'en' }: EventGridProps) {
     <section id="spatial" className="py-32 bg-ivory-warm/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className={`flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 ${isAr ? 'flex-row-reverse text-right' : ''}`}>
-          <div className="max-w-2xl">
-            <h2 className={`text-5xl md:text-6xl mb-6 ${isAr ? 'font-sans' : ''}`}>
-              {isAr ? <>إتقان <br /><span className="text-gold-elite italic">الرحلة المكانية</span></> : <>Mastering the <br /><span className="italic text-gold-elite">Spatial Journey</span></>}
+          <div className={isAr ? 'text-right' : 'text-left'}>
+            <div className={`flex items-center gap-4 mb-6 ${isAr ? 'flex-row-reverse' : ''}`}>
+              <span className="w-8 h-px bg-gold-elite/40" />
+              <span className="text-[11px] uppercase tracking-[4px] text-gold-elite font-bold">
+                {isAr ? 'الإنتاج المادي' : 'Physical Production'}
+              </span>
+            </div>
+            <h2 className={`text-4xl md:text-5xl mb-6 ${isAr ? 'font-sans' : 'font-display'}`}>
+              {isAr ? <>البيئات <span className="text-gold-elite italic">المبنية</span></> : <>BUILT <span className="text-gold-elite italic">ENVIRONMENTS</span></>}
             </h2>
-            <p className="text-ivory-warm/50 font-light text-lg">
+            <p className="text-ivory-warm/50 font-light text-lg mb-8 max-w-2xl">
               {isAr 
-                ? 'تم تصميم كل نقطة اتصال في فعالية تدشين "حياة مكة" في فندق جدة هيلتون من أجل إشراك الحواس، ومزج الحرفية التركية مع التراث السعودي.' 
-                : 'Every touchpoint of the "Hayat Makkah" launch at Jeddah Hilton is architected for elite sensory engagement, blending Turkish craftsmanship with Saudi heritage.'}
+                ? 'تم تصميم كل نقطة اتصال بصرياً وهندسياً لإشراك الحواس وتقديم تجربة لا تُنسى.' 
+                : 'Designed. Built. Executable. Every physical touchpoint is architected for elite sensory engagement.'}
             </p>
+            
+            <div className={`bg-charcoal-dark/50 border border-gold-elite/20 p-4 rounded-xl flex flex-col gap-2 max-w-2xl ${isAr ? 'items-end' : ''}`}>
+              <div className="text-[9px] uppercase tracking-[2px] text-gold-elite">Experience Note</div>
+              <div className={`text-xs text-sand-warm/60 font-light leading-relaxed ${isAr ? 'text-right' : ''}`}>
+                {isAr 
+                  ? 'يتفاعل الضيوف فعلياً مع تركيبات ضخمة وسليمة هيكلياً تبدو مهيبة وترحيبية في نفس الوقت.' 
+                  : 'Guests physically interact with grand, structurally sound installations that feel both imposing and deeply welcoming.'}
+              </div>
+            </div>
           </div>
           <div className={`flex items-center gap-4 ${isAr ? 'flex-row-reverse' : ''}`}>
             <button className="p-4 rounded-full border border-white/10 hover:border-gold-elite transition-all text-white/50 hover:text-gold-elite">
@@ -63,9 +78,9 @@ export default function EventGrid({ lang = 'en' }: EventGridProps) {
                 <p className="text-sm text-sand-warm/60 font-light leading-relaxed mb-6">
                   {isAr ? section.descriptionAr : section.description}
                 </p>
-                <button className={`flex items-center gap-2 text-xs uppercase tracking-[2px] font-bold text-gold-elite/60 group-hover:text-gold-elite transition-colors ${isAr ? 'flex-row-reverse' : ''}`}>
+                <button className={`flex items-center gap-2 text-xs uppercase tracking-[2px] font-bold text-gold-elite/60 group-hover:text-gold-elite transition-colors mt-6 ${isAr ? 'flex-row-reverse' : ''}`}>
                   <Layers size={14} />
-                  {isAr ? 'المواصفات المكانية' : 'Spatial Specification'}
+                  {isAr ? 'عرض المواصفات التنفيذية' : 'View Execution Spec'}
                 </button>
               </div>
 

@@ -6,7 +6,6 @@ import { PRESENTATION_SLIDES } from '../constants';
 type Language = 'en' | 'ar';
 
 interface PresentationLayerProps {
-  onClose: () => void;
   lang: Language;
   setLang: (lang: Language) => void;
 }
@@ -14,7 +13,7 @@ interface PresentationLayerProps {
 // Direction for cinematic slide transitions
 type Direction = 'forward' | 'backward';
 
-export default function PresentationLayer({ onClose, lang, setLang }: PresentationLayerProps) {
+export default function PresentationLayer({ lang, setLang }: PresentationLayerProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState<Direction>('forward');
   const [printMode, setPrintMode] = useState(false);
@@ -122,9 +121,9 @@ export default function PresentationLayer({ onClose, lang, setLang }: Presentati
           {/* Brand */}
           <div className="pointer-events-auto flex items-center gap-4">
             <div>
-              <div className="text-gold-elite font-serif text-base font-bold tracking-wider leading-none">HAYAT MAKKAH</div>
+              <div className="text-gold-elite font-serif text-base font-bold tracking-wider leading-none">EMLAK EVENT Proposal</div>
               <div className="text-sand-warm/30 font-mono text-[8px] uppercase tracking-[0.5em] mt-1">
-                {lang === 'en' ? 'VIP Protocol' : 'بروتوكول كبار الشخصيات'} — {currentSlide + 1}/{totalSlides}
+                {currentSlide + 1}/{totalSlides}
               </div>
             </div>
           </div>
@@ -322,9 +321,9 @@ function SlideContent({
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.45, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                className={`font-serif text-sand-warm leading-none tracking-tight ${
+                className={`font-serif text-sand-warm tracking-tight ${
                   isCover ? 'text-7xl md:text-[10vw]' : 'text-6xl md:text-8xl'
-                } ${isAr ? 'font-sans' : ''}`}
+                } ${isAr ? 'leading-[1.15]' : 'leading-none'}`}
               >
                 {isAr ? slide.titleAr : slide.title}
               </motion.h1>
@@ -333,7 +332,7 @@ function SlideContent({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.65, duration: 0.9 }}
-                className={`text-gold-elite uppercase tracking-[0.4em] text-sm md:text-xl font-light ${isAr ? 'font-sans' : ''}`}
+                className={`text-gold-elite uppercase tracking-[0.4em] text-sm md:text-xl font-light ${isAr ? 'leading-relaxed' : ''}`}
               >
                 {isAr ? slide.subtitleAr : slide.subtitle}
               </motion.p>
@@ -381,12 +380,12 @@ function SlideContent({
               </motion.div>
 
               {/* Title */}
-              <div className="overflow-hidden mb-4">
+              <div className="overflow-hidden pb-8 mb-2">
                 <motion.h2
                   initial={{ y: '100%' }}
                   animate={{ y: 0 }}
                   transition={{ delay: 0.35, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                  className={`font-serif text-sand-warm leading-none tracking-tight text-[clamp(3rem,7vw,8rem)] ${isAr ? 'font-sans' : ''}`}
+                  className={`font-serif text-sand-warm tracking-tight text-[clamp(3rem,7vw,8rem)] ${isAr ? 'leading-[1.15]' : 'leading-none'}`}
                 >
                   {isAr ? slide.titleAr : slide.title}
                 </motion.h2>
@@ -397,7 +396,7 @@ function SlideContent({
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.55, duration: 0.8 }}
-                className={`text-gold-elite uppercase tracking-[0.3em] text-lg md:text-2xl font-light mb-6 ${isAr ? 'font-sans' : ''}`}
+                className={`text-gold-elite uppercase tracking-[0.3em] text-lg md:text-2xl font-light mb-6 ${isAr ? 'leading-relaxed' : ''}`}
               >
                 {isAr ? slide.subtitleAr : slide.subtitle}
               </motion.p>
@@ -408,7 +407,7 @@ function SlideContent({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.75, duration: 0.8 }}
-                  className={`text-sand-warm/55 text-lg md:text-2xl font-light leading-relaxed max-w-2xl ${isAr ? 'font-sans' : ''}`}
+                  className={`text-sand-warm/55 text-lg md:text-2xl font-light leading-relaxed max-w-2xl ${isAr ? 'leading-loose' : ''}`}
                 >
                   {isAr ? slide.descriptionAr : slide.description}
                 </motion.p>
@@ -534,19 +533,20 @@ function PrintSlide({ slide, index, lang }: { slide: any; index: number; lang: L
 
         {/* Title */}
         <h2 style={{
-          fontFamily: isCover || isClosing ? '"Playfair Display", Georgia, serif' : '"Playfair Display", Georgia, serif',
+          fontFamily: '"Playfair Display", "Alexandria", Georgia, serif',
           color: '#EAE3D2',
-          lineHeight: 1,
+          lineHeight: isAr ? 1.2 : 1,
           letterSpacing: '-0.02em',
           fontSize: isCover ? 'clamp(4rem, 10vw, 9rem)' : isClosing ? '5rem' : 'clamp(3rem, 7vw, 7rem)',
           fontWeight: 400,
           margin: 0,
+          paddingBottom: isAr ? '1rem' : '0',
         }}>
           {isAr ? slide.titleAr : slide.title}
         </h2>
 
-        {/* Subtitle */}
         <p style={{
+          fontFamily: '"Inter", "Tajawal", sans-serif',
           color: '#C5A059',
           textTransform: 'uppercase',
           letterSpacing: '0.4em',
@@ -557,9 +557,9 @@ function PrintSlide({ slide, index, lang }: { slide: any; index: number; lang: L
           {isAr ? slide.subtitleAr : slide.subtitle}
         </p>
 
-        {/* Description */}
         {slide.description && !isCover && !isClosing && (
           <p style={{
+            fontFamily: '"Inter", "Tajawal", sans-serif',
             color: 'rgba(234,227,210,0.55)',
             fontSize: '1rem',
             fontWeight: 300,

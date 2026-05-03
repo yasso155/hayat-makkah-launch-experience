@@ -15,12 +15,14 @@ export default function Navigation({ onOpenPresentation, lang = 'en', setLang }:
   const navItems = lang === 'en' ? [
     { name: 'The Vision', href: '#vision' },
     { name: 'Spatial Design', href: '#spatial' },
+    { name: 'Event Branding', href: '#execution' },
     { name: 'VIP Concierge', href: '#concierge' },
     { name: 'Tech Showcase', href: '#tech' },
     { name: 'Timeline', href: '#timeline' },
   ] : [
     { name: 'الرؤية', href: '#vision' },
     { name: 'التصميم المكاني', href: '#spatial' },
+    { name: 'هوية الفعالية', href: '#execution' },
     { name: 'كونسيرج كبار الشخصيات', href: '#concierge' },
     { name: 'معرض التقنية', href: '#tech' },
     { name: 'الجدول الزمني', href: '#timeline' },
