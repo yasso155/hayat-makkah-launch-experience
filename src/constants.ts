@@ -37,7 +37,9 @@ export const ASSETS = {
   airport: '/assets/Airport Arrival.png',
   closing: '/assets/Closing.png',
   approach: '/assets/Firefly_gpt-image_futuristic building emerging from light, holographic architecture reveal, glowing par 386796.png',
-  gest_flow: '/assets/Guided Spatial Journey.png'
+  gest_flow: '/assets/Guided Spatial Journey.png',
+  collage1: '/assets/collage 1.jpeg',
+  collage2: '/assets/collage 2.jpeg'
 };
 
 export const SECTIONS: (EventSection & { titleAr: string; descriptionAr: string })[] = [
@@ -175,16 +177,27 @@ export const PRESENTATION_SLIDES = [
   {
     id: 6,
     type: 'content',
+    title: 'Grand Heritage Entrance',
+    titleAr: 'مدخل التراث الكبير',
+    subtitle: 'ENVIRONMENT | Monumental Welcome',
+    subtitleAr: 'البيئة | ترحيب مهيب',
+    description: 'A cinematic focal point showcasing the fusion of Saudi and Turkish architectural heritage.\n\nEXPERIENCE NOTE: Guests are greeted by a monumental relief wall and statues, establishing a sense of historical significance.',
+    descriptionAr: 'نقطة تركيز سينمائية تستعرض اندماج التراث المعماري السعودي والتركي.\n\nتفاصيل التجربة: يستقبل الضيوف جدار نقش ضخم وتماثيل، مما يرسخ شعوراً بالأهمية التاريخية.',
+    image: ASSETS.collage2
+  },
+  {
+    id: 7,
+    type: 'content',
     title: 'The Immersive Tunnel',
     titleAr: 'المسار الغامر',
     subtitle: 'ENVIRONMENT | Transitional walk',
     subtitleAr: 'البيئة | المسار الانتقالي',
     description: 'A built physical environment utilizing light and structure to transition the guest mindset.\n\nEXPERIENCE NOTE: Guests feel the physical transition from the outside world into the curated narrative space.',
-    descriptionAr: 'بيئة معمارية توظف الإضاءة والهياكل لتهيئة الضيوف ذهنياً.\n\nتفاصيل التجربة: يشعر الضيف بالانفصال التام عن العالم الخارجي والدخول في قلب السرد المكاني للحدث.',
+    descriptionAr: 'بيئة معمارية توظف الإضاءة والهياكل لتهيئة الضيوف ذهنياً.\n\nتفاصيل التجربة: يشعر الضيف بالانفصال التام عن العالم الخارجي والدخول في قلب السرد المكان للحدث.',
     image: ASSETS.overview
   },
   {
-    id: 7,
+    id: 8,
     type: 'content',
     title: 'The Main Stage',
     titleAr: 'المسرح الرئيسي',
@@ -195,7 +208,7 @@ export const PRESENTATION_SLIDES = [
     image: ASSETS.stage
   },
   {
-    id: 8,
+    id: 9,
     type: 'content',
     title: 'Cultural Expression',
     titleAr: 'التناغم الثقافي',
@@ -206,7 +219,24 @@ export const PRESENTATION_SLIDES = [
     image: ASSETS.night
   },
   {
-    id: 9,
+    id: 10,
+    type: 'hospitality',
+    title: 'The Hospitality Experience',
+    titleAr: 'تجربة الضيافة',
+    subtitle: 'EXPERIENCE | Curated Touchpoints',
+    subtitleAr: 'التجربة | نقاط اتصال منسقة',
+    description: 'A detailed overview of the guest journey, from arrival to personalized in-room experiences.',
+    descriptionAr: 'نظرة عامة مفصلة على رحلة الضيف، من الوصول وحتى التجارب الشخصية داخل الغرفة.',
+    image: ASSETS.collage1,
+    sections: [
+      { id: 'welcome', title: 'Welcome Kit', titleAr: 'حقيبة الترحيب', icon: 'Gift' },
+      { id: 'digital', title: 'Digital Guide', titleAr: 'الدليل الرقمي', icon: 'Smartphone' },
+      { id: 'transport', title: 'Transportation', titleAr: 'المواصلات', icon: 'Bus' },
+      { id: 'amenities', title: 'Premium Amenities', titleAr: 'المرافق الفاخرة', icon: 'Coffee' }
+    ]
+  },
+  {
+    id: 11,
     type: 'content',
     title: 'Seamless Hospitality',
     titleAr: 'ضيافة استثنائية',
@@ -217,7 +247,7 @@ export const PRESENTATION_SLIDES = [
     image: ASSETS.host
   },
   {
-    id: 10,
+    id: 12,
     type: 'content',
     title: 'Physical Production',
     titleAr: 'التنفيذ المعماري',
@@ -228,7 +258,7 @@ export const PRESENTATION_SLIDES = [
     image: ASSETS.approach
   },
   {
-    id: 11,
+    id: 13,
     type: 'content',
     title: 'Execution Command',
     titleAr: 'منظومة التحكم',
@@ -239,7 +269,7 @@ export const PRESENTATION_SLIDES = [
     image: ASSETS.smart
   },
   {
-    id: 12,
+    id: 14,
     type: 'content',
     title: 'Networking Environment',
     titleAr: 'ملتقى النخبة',
@@ -250,7 +280,7 @@ export const PRESENTATION_SLIDES = [
     image: ASSETS.networking
   },
   {
-    id: 13,
+    id: 15,
     type: 'content',
     title: 'A World-Class Benchmark',
     titleAr: 'معيار عالمي للتميز',

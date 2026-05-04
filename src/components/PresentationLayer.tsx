@@ -1,5 +1,5 @@
 import { motion, AnimatePresence, useMotionValue, useTransform } from 'motion/react';
-import { ChevronLeft, ChevronRight, Printer, Languages, Play, Pause } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Printer, Languages, Play, Pause, Gift, Smartphone, Bus, Coffee } from 'lucide-react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { PRESENTATION_SLIDES } from '../constants';
 
@@ -281,14 +281,14 @@ function SlideContent({
               src={slide.image}
               alt={slide.title}
               className="w-full h-full object-cover"
-              style={{ filter: 'brightness(0.75)' }}
+              style={{ filter: 'brightness(0.85) contrast(1.05)' }}
             />
           )}
         </motion.div>
 
         {/* ── GRADIENT OVERLAYS ── */}
-        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-charcoal via-charcoal/20 to-transparent" />
-        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-charcoal/60 via-transparent to-transparent" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-charcoal/80 via-charcoal/20 to-transparent" />
 
         {/* ── DECORATIVE GOLD LINE ── */}
         {!isCover && !isClosing && (
@@ -321,7 +321,7 @@ function SlideContent({
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.45, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                className={`font-serif text-sand-warm tracking-tight ${
+                className={`font-serif text-sand-warm tracking-tight drop-shadow-2xl ${
                   isCover ? 'text-7xl md:text-[10vw]' : 'text-6xl md:text-8xl'
                 } ${isAr ? 'leading-[1.15]' : 'leading-none'}`}
               >
@@ -385,7 +385,7 @@ function SlideContent({
                   initial={{ y: '100%' }}
                   animate={{ y: 0 }}
                   transition={{ delay: 0.35, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                  className={`font-serif text-sand-warm tracking-tight text-[clamp(3rem,7vw,8rem)] ${isAr ? 'leading-[1.15]' : 'leading-none'}`}
+                  className={`font-serif text-sand-warm tracking-tight text-[clamp(3rem,7vw,8rem)] drop-shadow-xl ${isAr ? 'leading-[1.15]' : 'leading-none'}`}
                 >
                   {isAr ? slide.titleAr : slide.title}
                 </motion.h2>
@@ -407,10 +407,38 @@ function SlideContent({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.75, duration: 0.8 }}
-                  className={`text-sand-warm/55 text-lg md:text-2xl font-light leading-relaxed max-w-2xl ${isAr ? 'leading-loose' : ''}`}
+                  className={`text-sand-warm/90 text-lg md:text-2xl font-light leading-relaxed max-w-2xl ${isAr ? 'leading-loose' : ''} drop-shadow-md`}
                 >
                   {isAr ? slide.descriptionAr : slide.description}
                 </motion.p>
+              )}
+
+              {/* ── HOSPITALITY GRID ── */}
+              {slide.type === 'hospitality' && slide.sections && (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9, duration: 0.8 }}
+                  className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 w-full max-w-6xl"
+                >
+                  {slide.sections.map((section: any, sIdx: number) => {
+                    const Icon = { Gift, Smartphone, Bus, Coffee }[section.icon as keyof typeof Icon] || Gift;
+                    return (
+                      <div
+                        key={section.id}
+                        className="glass-morphism p-8 rounded-2xl flex flex-col items-center text-center gap-4 group hover:bg-gold-elite/10 transition-all duration-500 border-gold-elite/10 hover:border-gold-elite/40"
+                      >
+                        <div className="w-16 h-16 rounded-full bg-gold-elite/10 flex items-center justify-center text-gold-elite group-hover:scale-110 transition-transform duration-500">
+                          <Icon size={32} strokeWidth={1.5} />
+                        </div>
+                        <div>
+                          <h3 className="text-gold-elite font-serif text-xl mb-1">{isAr ? section.titleAr : section.title}</h3>
+                          <div className="text-sand-warm/40 font-mono text-[10px] uppercase tracking-widest">{isAr ? section.title : section.titleAr}</div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </motion.div>
               )}
             </div>
           )}
@@ -468,7 +496,7 @@ function PrintSlide({ slide, index, lang }: { slide: any; index: number; lang: L
             position: 'absolute', inset: 0,
             width: '100%', height: '100%',
             objectFit: 'cover',
-            filter: 'brightness(0.7)',
+            filter: 'brightness(0.85) contrast(1.1)',
           }}
         />
       )}
@@ -541,6 +569,7 @@ function PrintSlide({ slide, index, lang }: { slide: any; index: number; lang: L
           fontWeight: 400,
           margin: 0,
           paddingBottom: isAr ? '1rem' : '0',
+          textShadow: '0 4px 20px rgba(0,0,0,0.6)',
         }}>
           {isAr ? slide.titleAr : slide.title}
         </h2>
@@ -560,15 +589,63 @@ function PrintSlide({ slide, index, lang }: { slide: any; index: number; lang: L
         {slide.description && !isCover && !isClosing && (
           <p style={{
             fontFamily: '"Inter", "Tajawal", sans-serif',
-            color: 'rgba(234,227,210,0.55)',
-            fontSize: '1rem',
-            fontWeight: 300,
+            color: 'rgba(234,227,210,0.95)',
+            fontSize: '1.1rem',
+            fontWeight: 400,
             lineHeight: 1.6,
-            maxWidth: '600px',
+            maxWidth: '650px',
             margin: 0,
+            textShadow: '0 2px 8px rgba(0,0,0,0.3)',
           }}>
             {isAr ? slide.descriptionAr : slide.description}
           </p>
+        )}
+
+        {/* Hospitality Grid for Print */}
+        {slide.type === 'hospitality' && slide.sections && (
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: '2rem',
+            marginTop: '3rem',
+            width: '100%',
+          }}>
+            {slide.sections.map((section: any) => (
+              <div key={section.id} style={{
+                background: 'rgba(255,255,255,0.03)',
+                border: '1px solid rgba(197,160,89,0.2)',
+                borderRadius: '1rem',
+                padding: '2rem 1rem',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '1rem',
+              }}>
+                <div style={{
+                  width: '3.5rem',
+                  height: '3.5rem',
+                  borderRadius: '50%',
+                  background: 'rgba(197,160,89,0.1)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#C5A059',
+                }}>
+                  {/* Static icon placeholder for print */}
+                  <div style={{ fontSize: '1.5rem' }}>✧</div>
+                </div>
+                <div>
+                  <h3 style={{ color: '#C5A059', margin: '0 0 0.25rem 0', fontFamily: '"Playfair Display", serif', fontSize: '1.25rem' }}>
+                    {isAr ? section.titleAr : section.title}
+                  </h3>
+                  <div style={{ color: 'rgba(234,227,210,0.4)', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                    {isAr ? section.title : section.titleAr}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         )}
 
         {/* Decorative bottom line for cover */}
